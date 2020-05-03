@@ -213,69 +213,180 @@ return [
             'search' => true,
             'topnav' => true,
         ],
+        // //PAGE HOME
+        // [
+        //     'header' => 'PAGE HOME',
+        // ],
         [
-            'header' => 'PAGE HOME',
-        ],
-        [
-            'text' => 'Menu',
-            'url'  => '',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'PAGE HOME',
+            'icon'    => 'fas fa-home',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Bannière Home',
+                    'url'  => '',
+                    'icon_color' => 'orange',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Presentation',
+                    'url'  => '',
+                    'icon_color' => 'yellow',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Video',
+                    'url'  => '',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text' => 'Testimonials',
+                    'url'  => '',
+                    'icon_color' => 'cyan',
+                ],
+                [
+                    'text' => 'Team',
+                    'url'  => '',
+                    'icon_color' => 'blue',
+                ],
+                [
+                    'text' => 'Ready?',
+                    'url'  => '',
+                    'icon_color' => 'purple',
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        // //PAGE SEVICES
+        // [
+        //     'header' => 'PAGE SERVICES'
+        // ],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text'    => 'PAGE SERVICES',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'Bannière Services',
+                    'url'  => '',
+                    'icon_color' => 'orange',
+                ],
+                [
+                    'text' => 'Services',
+                    'url'  => '',
+                    'icon_color' => 'yellow',
+                ],
+                [
+                    'text' => 'Services Primés',
+                    'url'  => '',
+                    'icon_color' => 'green',
+                ],
+            ],
         ],
+        //PAGE BLOG
+        // [
+        //     'header' => 'PAGE BLOG'
+        // ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text'    => 'PAGE BLOG',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'Bannière Blog',
+                    'url'  => '',
+                    'icon_color' => 'orange',
+                ],
+                [
+                    'text' => 'Articles',
+                    'url'  => '',
+                    'icon_color' => 'yellow',
+                ],
+                [
+                    'text' => 'Autheurs',
+                    'url'  => '',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text' => 'Comments',
+                    'url'  => '',
+                    'icon_color' => 'cyan',
+                ],
+                [
+                    'text' => 'Catégories',
+                    'url'  => '',
+                    'icon_color' => 'blue',
+                ],
+                [
+                    'text' => 'Tags',
+                    'url'  => '',
+                    'icon_color' => 'purple',
+                ],
+            ],
         ],
+        //PAGE BLOG POST
+        // [
+        //     'header' => 'PAGE BLOG POST'
+        // ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
+            'text'    => 'PAGE BLOG POST',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'Bannière Blog Post',
+                    'url'  => '',
+                    'icon_color' => 'orange',
+                ],
+            ],
+        ],
+        // PAGE CONTACT
+        // [
+        //     'header' => 'PAGE CONTACT'
+        // ],
+        [
+            'text'    => 'PAGE CONTACT',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'Bannière Contact',
+                    'url'  => '',
+                    'icon_color' => 'orange',
+                ],
+                [
+                    'text' => 'Contact',
+                    'url'  => '',
+                    'icon_color' => 'yellow',
+                ],
+                [
+                    'text' => 'Info Contact',
+                    'url'  => '',
+                    'icon_color' => 'green',
+                ],
+                [
+                    'text' => 'Formulaire',
+                    'url'  => '',
+                    'icon_color' => 'cyan',
+                ],
+            ],
+        ],
+        //Others
+        // [
+        //     'header' => 'OTHERS'
+        // ],
+        [
+            'text'    => 'OTHERS',
+            'icon'    => 'fas fa-home',
+            'submenu' => [
+                [
+                    'text' => 'Header',
+                    'url'  => '',
+                    'icon_color' => 'orange',
+                ],
+                [
+                    'text' => 'Newsletter',
+                    'url'  => '',
+                    'icon_color' => 'yellow',
+                ],
+                [
+                    'text' => 'Footer',
+                    'url'  => '',
+                    'icon_color' => 'green',
+                ],
+            ],
         ],
     ],
 
