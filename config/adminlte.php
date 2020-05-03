@@ -372,8 +372,8 @@ return [
             'icon'    => 'fas fa-home',
             'submenu' => [
                 [
-                    'text' => 'Header',
-                    'url'  => '',
+                    'text' => 'Menu',
+                    'url'  => '/admin/menu',
                     'icon_color' => 'orange',
                 ],
                 [

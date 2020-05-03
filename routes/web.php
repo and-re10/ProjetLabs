@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Menu;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,27 +20,37 @@ Route::get('/', function () {
 
 //Page Home
 Route::get('/home', function () {
-    return view('home/index');
+    $menus = Menu::all();
+
+    return view('home/index', compact('menus'));
 })->name('home');
 
 //Page Services
 Route::get('/services', function () {
-    return view('services/index');
+    $menus = Menu::all();
+
+    return view('services/index', compact('menus'));
 })->name('services');
 
 //Page Blog
 Route::get('/blog', function () {
-    return view('blog/index');
+    $menus = Menu::all();
+
+    return view('blog/index', compact('menus'));
 })->name('blog');
 
 //Page Blog-Post
 Route::get('/blog-post', function () {
-    return view('blog-post/index');
+    $menus = Menu::all();
+
+    return view('blog-post/index', compact('menus'));
 })->name('blog-post');
 
 //Page Contact
 Route::get('/contact', function () {
-    return view('contact/index');
+    $menus = Menu::all();
+
+    return view('contact/index', compact('menus'));
 })->name('contact');
 
 // //Coté Admin
@@ -49,6 +60,11 @@ Route::get('/contact', function () {
     Route::get('/admin', function(){
         return view('admin.index');
     })->name('admin');
+
+    //OTHERS
+    //MENU
+    Route::resource('/admin/menu', 'MenuController');
+
 // });
 
 Auth::routes();
