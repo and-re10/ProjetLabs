@@ -45,27 +45,52 @@
     <div class="about-contant">
         <div class="container">
             <div class="section-title">
-                <h2>Get in <span>the Lab</span> and discover the world</h2>
+                @if (count($abouts) !== 0)
+                    <h2>{{$abouts[0]->titre}}</h2>
+                @else
+                    <h2>Get in <span>the Lab</span> and discover the world</h2>
+                @endif
+                
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.</p>
-                </div>
-                <div class="col-md-6">
-                    <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. Quisque porttitor porttitorlaoreet vel risus et luctus.</p>
-                </div>
+                @if (count($abouts) !== 0)
+                    <div class="col-md-6">
+                        <p>{{$abouts[0]->texte1}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>{{$abouts[0]->texte2}}</p>
+                    </div>
+                @else
+                    <div class="col-md-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. Quisque porttitor porttitorlaoreet vel risus et luctus.</p>
+                    </div>
+                @endif
             </div>
             <div class="text-center mt60">
-                <a href="" class="site-btn">Browse</a>
+                @if (count($abouts) !== 0)
+                    <a href="#contact-form" class="site-btn scrollTo">{{$abouts[0]->btn_name}}</a>
+                @else
+                    <a href="#contact-form" class="site-btn">Browse</a>
+                @endif
             </div>
             <!-- popup video -->
             <div class="intro-video">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <img src="img/video.jpg" alt="">
-                        <a href="https://www.youtube.com/watch?v=JgHfx2v9zOU" class="video-popup">
-                            <i class="fa fa-play"></i>
-                        </a>
+                        @if (count($videos) !== 0)
+                            <img src="storage/{{$videos[0]->video}}" alt="">
+                            <a href="{{asset($videos[0]->btn_url)}}" class="video-popup">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        @else
+                            <img src="img/video.jpg" alt="">
+                            <a href="https://www.youtube.com/watch?v=JgHfx2v9zOU" class="video-popup">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -223,33 +223,28 @@ return [
             'submenu' => [
                 [
                     'text' => 'Bannière Home',
-                    'url'  => '',
+                    'url'  => '/admin/banniere-home',
                     'icon_color' => 'orange',
                 ],
                 [
-                    'text' => 'Presentation',
-                    'url'  => '',
+                    'text' => 'About',
+                    'url'  => '/admin/about',
                     'icon_color' => 'yellow',
                 ],
                 [
-                    'text' => 'Video',
-                    'url'  => '',
-                    'icon_color' => 'green',
-                ],
-                [
                     'text' => 'Testimonials',
-                    'url'  => '',
-                    'icon_color' => 'cyan',
+                    'url'  => '/admin/testimonials1',
+                    'icon_color' => 'blue',
                 ],
                 [
                     'text' => 'Team',
                     'url'  => '',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'purple',
                 ],
                 [
                     'text' => 'Ready?',
                     'url'  => '',
-                    'icon_color' => 'purple',
+                    'icon_color' => 'black',
                 ],
             ],
         ],
@@ -383,7 +378,7 @@ return [
                 ],
                 [
                     'text' => 'Footer',
-                    'url'  => '',
+                    'url'  => '/admin/footer',
                     'icon_color' => 'green',
                 ],
             ],

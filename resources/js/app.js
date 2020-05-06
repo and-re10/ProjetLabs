@@ -32,4 +32,4 @@ require('./modules-js/owl.carousel.min.js');
 require('./modules-js/circle-progress.min.js');
 // require('https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo')
 require('./modules-js/map.js');
-require('./modules-js/main.js')
+require('./modules-js/main.js');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFooterTable extends Migration
+class CreateVideoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateFooterTable extends Migration
      */
     public function up()
     {
-        Schema::create('footer', function (Blueprint $table) {
+        Schema::create('video', function (Blueprint $table) {
             $table->id();
-            $table->string('texte', 100);
+            $table->string('video', 150);
+            $table->string('btn_url', 150)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateFooterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('footer');
+        Schema::dropIfExists('video');
     }
 }

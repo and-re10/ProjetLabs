@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFooterTable extends Migration
+class CreateAboutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateFooterTable extends Migration
      */
     public function up()
     {
-        Schema::create('footer', function (Blueprint $table) {
+        Schema::create('about', function (Blueprint $table) {
             $table->id();
-            $table->string('texte', 100);
+            $table->string('titre', 50);
+            $table->text('texte1');
+            $table->text('texte2')->nullable();
+            $table->string('btn_name', 20);
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateFooterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('footer');
+        Schema::dropIfExists('about');
     }
 }

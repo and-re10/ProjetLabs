@@ -14,7 +14,7 @@
                 <p class="con-item">hello@company.com</p>
             </div>
             <!-- contact form -->
-            <div class="col-md-6 col-pull">
+            <div class="col-md-6 col-pull" id="contact-form">
                 <form class="form-class" id="con_form">
                     <div class="row">
                         <div class="col-sm-6">

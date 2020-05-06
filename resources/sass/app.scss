@@ -1,4 +1,4 @@
-@import './modules-scss/bootstrap.min.scss';
+// @import './modules-scss/bootstrap.min.scss';
 @import './modules-scss/font-awesome.min.scss';
 @import './modules-scss/flaticon.scss';
 @import './modules-scss/magnific-popup.scss';
@@ -6,6 +6,7 @@
 // Variables
 @import 'variables';
 // @import '~bootstrap/scss/bootstrap';
+@import './modules-scss/bootstrap.min.scss';
 
 
 @import './modules-scss/style.scss';

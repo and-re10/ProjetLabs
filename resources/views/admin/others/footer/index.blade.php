@@ -3,16 +3,16 @@
 @section('content')
     
     <div class="container">
-        <h1 class="text-center">Navbar Menu</h1>
+        <h1 class="text-center">Footer</h1>
 
         <div class="col-12">
-            @if (count($menus) === 0)
-                <a href="{{route('menu.create')}}" class="btn btn-primary mb-3">Créer</a>                
+            @if (count($footers) === 0)
+                <a href="{{route('footer.create')}}" class="btn btn-primary mb-3">Créer</a>                
             @endif
 
             <div class="card">
                 <div class="card-header">
-                <h3 class="card-title">Mon Menu</h3>
+                <h3 class="card-title">Mon Footer</h3>
         
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -29,26 +29,18 @@
                 <table class="table table-hover text-nowrap">
                     <thead>
                     <tr>
-                        <th>Logo</th>
-                        <th>lien 1</th>
-                        <th>lien 2</th>
-                        <th>lien 3</th>
-                        <th>lien 4</th>
+                        <th>Texte du Footer</th>
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach ($menus as $menu)
+                        @foreach ($footers as $footer)
                             <tr>
-                                <td><img src="{{asset('storage/'.$menu->logo)}}" class="w-100" alt=""></td>
-                                <td>{{maxStr($menu->nom_lien1, 20)}}</td>
-                                <td>{{maxStr($menu->nom_lien2, 20)}}</td>
-                                <td>{{maxStr($menu->nom_lien3, 20)}}</td>
-                                <td>{{maxStr($menu->nom_lien4, 20)}}</td>
+                                <td>{{maxStr($footer->texte, 20)}}</td>
                                 <td>
-                                    <form action="{{route('menu.destroy', $menu->id)}}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{route('footer.destroy', $footer->id)}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('delete')
-                                        <a href="{{route('menu.edit', $menu->id)}}" class="btn btn-primary">Éditer</a>
+                                        <a href="{{route('footer.edit', $footer->id)}}" class="btn btn-primary">Éditer</a>
                                         <button type="submit" class="btn btn-danger">Supprimer</button>
                                     </form>
                                 </td>

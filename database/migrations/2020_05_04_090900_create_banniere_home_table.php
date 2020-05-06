@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFooterTable extends Migration
+class CreateBanniereHomeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateFooterTable extends Migration
      */
     public function up()
     {
-        Schema::create('footer', function (Blueprint $table) {
+        Schema::create('banniere_home', function (Blueprint $table) {
             $table->id();
-            $table->string('texte', 100);
+            $table->string('slogan', 100);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateFooterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('footer');
+        Schema::dropIfExists('banniere_home');
     }
 }
