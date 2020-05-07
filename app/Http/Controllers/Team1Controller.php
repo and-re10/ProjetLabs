@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Testimonials1Request;
-use App\Testimonials1;
-use App\Testimonials2;
+use App\Http\Requests\Team1Request;
+use App\Team1;
+use App\Team2;
 
-class Testimonials1Controller extends Controller
+class Team1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class Testimonials1Controller extends Controller
      */
     public function index()
     {
-        $testimonials1 = Testimonials1::all();
-        $testimonials2 = Testimonials2::all();
+        $teams1 = Team1::all();
+        $teams2 = Team2::all();
 
-        return view('admin.home.testimonials.index', compact('testimonials1', 'testimonials2'));
+        return view('admin.home.team.index', compact('teams1', 'teams2'));
     }
 
     /**
@@ -30,10 +30,9 @@ class Testimonials1Controller extends Controller
      */
     public function create()
     {
-        $testimonials1 = Testimonials1::all();
-
-        if (count($testimonials1) === 0) {
-            return view('admin.home.testimonials.create');
+        $teams1 = Team1::all();
+        if (count($teams1) === 0) {
+            return view('admin.home.team.create');
         }
         return redirect()->back();
     }
@@ -44,14 +43,14 @@ class Testimonials1Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Testimonials1Request $request)
+    public function store(Team1Request $request)
     {
-        $testimonial1 = new Testimonials1();
+        $team1 = new Team1();
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $team1->titre = request('titre');
+        $team1->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('team1.index');
     }
 
     /**
@@ -73,9 +72,9 @@ class Testimonials1Controller extends Controller
      */
     public function edit($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $team1 = Team1::find($id);
 
-        return view('admin.home.testimonials.edit', compact('testimonial1'));
+        return view('admin.home.team.edit', compact('team1'));
     }
 
     /**
@@ -85,14 +84,14 @@ class Testimonials1Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Testimonials1Request $request, $id)
+    public function update(Team1Request $request, $id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $team1 = Team1::find($id);
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $team1->titre = request('titre');
+        $team1->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('team1.index'); 
     }
 
     /**
@@ -103,10 +102,10 @@ class Testimonials1Controller extends Controller
      */
     public function destroy($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $team1 = Team1::find($id);
 
-        Storage::delete($testimonial1);
-        $testimonial1->delete();
+        Storage::delete($team1);
+        $team1->delete();
 
         return redirect()->back();
     }

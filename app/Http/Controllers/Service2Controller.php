@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Testimonials1Request;
-use App\Testimonials1;
-use App\Testimonials2;
+use App\Http\Requests\Service2Request;
+use App\Service1;
+use App\Service2;
 
-class Testimonials1Controller extends Controller
+class Service2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class Testimonials1Controller extends Controller
      */
     public function index()
     {
-        $testimonials1 = Testimonials1::all();
-        $testimonials2 = Testimonials2::all();
+        $services1 = Service1::all();
+        $services2 = Service2::all();
 
-        return view('admin.home.testimonials.index', compact('testimonials1', 'testimonials2'));
+        return view('admin.services.services1.index', compact('services1', 'services2'));
     }
 
     /**
@@ -30,12 +30,7 @@ class Testimonials1Controller extends Controller
      */
     public function create()
     {
-        $testimonials1 = Testimonials1::all();
-
-        if (count($testimonials1) === 0) {
-            return view('admin.home.testimonials.create');
-        }
-        return redirect()->back();
+        return view('admin.services.services1.services2.create');
     }
 
     /**
@@ -44,14 +39,16 @@ class Testimonials1Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Testimonials1Request $request)
+    public function store(Service2Request $request)
     {
-        $testimonial1 = new Testimonials1();
+        $service2 = new Service2();
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $service2->titre = request('titre');
+        $service2->description = request('description');
+        $service2->icon = request('icon');
+        $service2->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('service2.index');
     }
 
     /**
@@ -73,9 +70,9 @@ class Testimonials1Controller extends Controller
      */
     public function edit($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $service2 = Service2::find($id);
 
-        return view('admin.home.testimonials.edit', compact('testimonial1'));
+        return view('admin.services.services1.services2.edit', compact('service2'));
     }
 
     /**
@@ -85,14 +82,16 @@ class Testimonials1Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Testimonials1Request $request, $id)
+    public function update(Service2Request $request, $id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $service2 = Service2::find($id);
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $service2->titre = request('titre');
+        $service2->description = request('description');
+        $service2->icon = request('icon');
+        $service2->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('service2.index');
     }
 
     /**
@@ -103,10 +102,10 @@ class Testimonials1Controller extends Controller
      */
     public function destroy($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $service2 = Service2::find($id);
 
-        Storage::delete($testimonial1);
-        $testimonial1->delete();
+        Storage::delete($service2);
+        $service2->delete();
 
         return redirect()->back();
     }

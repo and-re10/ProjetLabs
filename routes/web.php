@@ -9,6 +9,12 @@ use App\About;
 use App\Video;
 use App\Testimonials1;
 use App\Testimonials2;
+use App\Team1;
+use App\Team2;
+use App\Ready;
+use App\Service1;
+use App\Service2;
+use App\InfoContact;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,16 +41,25 @@ Route::get('/home', function () {
     $videos = Video::all();
     $testimonials1 = Testimonials1::all();
     $testimonials2 = Testimonials2::all();
+    $teams1 = Team1::all();
+    $teams2 = Team2::all();
+    $readys = Ready::all();
+    $services1 = Service1::all();
+    $services2 = Service2::all();
+    $infoContacts = InfoContact::all();
 
-    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2'));
+    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts'));
 })->name('home');
 
 //Page Services
 Route::get('/services', function () {
     $menus = Menu::all();
     $footers = Footer::all();
+    $services1 = Service1::all();
+    $services2 = Service2::all();
+    $infoContacts = InfoContact::all();
 
-    return view('services/index', compact('menus', 'footers'));
+    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts'));
 })->name('services');
 
 //Page Blog
@@ -67,9 +82,13 @@ Route::get('/blog-post', function () {
 Route::get('/contact', function () {
     $menus = Menu::all();
     $footers = Footer::all();
+    $infoContacts = InfoContact::all();
 
-    return view('contact/index', compact('menus', 'footers'));
+    return view('contact/index', compact('menus', 'footers', 'infoContacts'));
 })->name('contact');
+
+
+
 
 // //Coté Admin
 // Route::group(['middleware' => ['auth']], function(){
@@ -97,6 +116,22 @@ Route::get('/contact', function () {
     Route::resource('/admin/testimonials1', 'Testimonials1Controller');
     //Testimonials2
     Route::resource('/admin/testimonials2', 'Testimonials2Controller');
+    //Team
+    //Team1
+    Route::resource('/admin/team1', 'Team1Controller');
+    //Team2
+    Route::resource('/admin/team2', 'Team2Controller');
+    //Ready
+    Route::resource('/admin/ready', 'ReadyController');
+    //Service
+    //Service1
+    Route::resource('/admin/service1', 'Service1Controller');
+    //Service2
+    Route::resource('/admin/service2', 'Service2Controller');
+    //Contact
+    //Info-Contact
+    Route::resource('/admin/info-contact', 'InfoContactController');
+
 
 
 // });

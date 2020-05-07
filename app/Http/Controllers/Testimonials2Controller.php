@@ -94,9 +94,20 @@ class Testimonials2Controller extends Controller
         ],
         [
             'name.required' => 'Ecrivez votre nom',
+            'name.min' => 'Minimum, 2 caractères',
+            'name.max' => 'Maximum, 20 caractères',
+
             'surnom.required' => 'Ecrivez votre surnom',
+            'surnom.min' => 'Minimum, 2 caractères',
+            'surnom.max' => 'Maximum, 20 caractères',
+
             'texte.required' => 'Ecrivez un texte',
+            'texte.min' => 'Minimum, 2 caractères',
+            'texte.max' => 'Maximum, 300 caractères',
+
             'work.required' => 'Ecrivez votre job',
+            'work.min' => 'Minimum, 2 caractères',
+            'work.max' => 'Maximum, 30 caractères',
         ]);
 
         $testimonial2 = Testimonials2::find($id);

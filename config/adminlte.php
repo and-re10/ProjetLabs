@@ -238,12 +238,12 @@ return [
                 ],
                 [
                     'text' => 'Team',
-                    'url'  => '',
+                    'url'  => '/admin/team1',
                     'icon_color' => 'purple',
                 ],
                 [
                     'text' => 'Ready?',
-                    'url'  => '',
+                    'url'  => '/admin/ready',
                     'icon_color' => 'black',
                 ],
             ],
@@ -263,7 +263,7 @@ return [
                 ],
                 [
                     'text' => 'Services',
-                    'url'  => '',
+                    'url'  => '/admin/service1',
                     'icon_color' => 'yellow',
                 ],
                 [
@@ -348,11 +348,11 @@ return [
                 ],
                 [
                     'text' => 'Info Contact',
-                    'url'  => '',
+                    'url'  => '/admin/info-contact',
                     'icon_color' => 'green',
                 ],
                 [
-                    'text' => 'Formulaire',
+                    'text' => 'Messages',
                     'url'  => '',
                     'icon_color' => 'cyan',
                 ],

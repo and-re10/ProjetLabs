@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Testimonials1Request;
-use App\Testimonials1;
-use App\Testimonials2;
+use App\Http\Requests\ReadyRequest;
+use App\Ready;
 
-class Testimonials1Controller extends Controller
+class ReadyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +16,9 @@ class Testimonials1Controller extends Controller
      */
     public function index()
     {
-        $testimonials1 = Testimonials1::all();
-        $testimonials2 = Testimonials2::all();
+        $readys = Ready::all();
 
-        return view('admin.home.testimonials.index', compact('testimonials1', 'testimonials2'));
+        return view('admin.home.ready.index', compact('readys'));
     }
 
     /**
@@ -30,12 +28,7 @@ class Testimonials1Controller extends Controller
      */
     public function create()
     {
-        $testimonials1 = Testimonials1::all();
-
-        if (count($testimonials1) === 0) {
-            return view('admin.home.testimonials.create');
-        }
-        return redirect()->back();
+        return view('admin.home.ready.create');
     }
 
     /**
@@ -44,14 +37,16 @@ class Testimonials1Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Testimonials1Request $request)
+    public function store(ReadyRequest $request)
     {
-        $testimonial1 = new Testimonials1();
+        $ready = new Ready();
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $ready->titre  = request('titre');
+        $ready->sous_titre = request('sous_titre');
+        $ready->btn_name = request('btn_name');
+        $ready->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('ready.index');
     }
 
     /**
@@ -73,9 +68,9 @@ class Testimonials1Controller extends Controller
      */
     public function edit($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $ready = Ready::find($id);
 
-        return view('admin.home.testimonials.edit', compact('testimonial1'));
+        return view('admin.home.ready.edit', compact('ready'));
     }
 
     /**
@@ -85,14 +80,16 @@ class Testimonials1Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Testimonials1Request $request, $id)
+    public function update(ReadyRequest $request, $id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $ready = Ready::find($id);
 
-        $testimonial1->titre = request('titre');
-        $testimonial1->save();
+        $ready->titre  = request('titre');
+        $ready->sous_titre = request('sous_titre');
+        $ready->btn_name = request('btn_name');
+        $ready->save();
 
-        return redirect()->route('testimonials1.index');
+        return redirect()->route('ready.index');
     }
 
     /**
@@ -103,10 +100,10 @@ class Testimonials1Controller extends Controller
      */
     public function destroy($id)
     {
-        $testimonial1 = Testimonials1::find($id);
+        $ready = Ready::find($id);
 
-        Storage::delete($testimonial1);
-        $testimonial1->delete();
+        Storage::delete($ready);
+        $ready->delete();
 
         return redirect()->back();
     }
