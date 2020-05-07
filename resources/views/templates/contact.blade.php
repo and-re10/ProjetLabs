@@ -26,19 +26,52 @@
             </div>
             <!-- contact form -->
             <div class="col-md-6 col-pull" id="contact-form">
-                <form class="form-class" id="con_form">
+                <form class="form-class" action="{{route('contact-messages.store')}}" id="con_form" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
+
+                        {{-- Nom --}}
                         <div class="col-sm-6">
                             <input type="text" name="name" placeholder="Your name">
+                            @error('name')
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
+
+                        {{-- Email --}}
                         <div class="col-sm-6">
                             <input type="text" name="email" placeholder="Your email">
+                            @error('email')
+                            <div class="text-danger">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
+                        
                         <div class="col-sm-12">
-                            <input type="text" name="subject" placeholder="Subject">
+
+                            {{-- Sujet --}}
+                            <input type="text" name="sujet" placeholder="Subject">
+                            @error('sujet')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                            @enderror
+
+                            {{-- Message --}}
                             <textarea name="message" placeholder="Message"></textarea>
+
+                            @if (session('messages'))
+                                <div class="text-success pb-3">
+                                    {{session('messages')}}
+                                </div>
+                            @endif
+
                             <button class="site-btn">send</button>
                         </div>
+                        
                     </div>
                 </form>
             </div>

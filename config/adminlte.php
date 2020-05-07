@@ -353,7 +353,7 @@ return [
                 ],
                 [
                     'text' => 'Messages',
-                    'url'  => '',
+                    'url'  => '/admin/contact-messages',
                     'icon_color' => 'cyan',
                 ],
             ],

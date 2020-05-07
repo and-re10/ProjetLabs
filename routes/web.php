@@ -15,6 +15,7 @@ use App\Ready;
 use App\Service1;
 use App\Service2;
 use App\InfoContact;
+use App\Message;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +48,9 @@ Route::get('/home', function () {
     $services1 = Service1::all();
     $services2 = Service2::all();
     $infoContacts = InfoContact::all();
+    $messages = Message::all();
 
-    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts'));
+    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts', 'messages'));
 })->name('home');
 
 //Page Services
@@ -58,8 +60,9 @@ Route::get('/services', function () {
     $services1 = Service1::all();
     $services2 = Service2::all();
     $infoContacts = InfoContact::all();
+    $messages = Meessage::all();
 
-    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts'));
+    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts', 'messages'));
 })->name('services');
 
 //Page Blog
@@ -83,8 +86,9 @@ Route::get('/contact', function () {
     $menus = Menu::all();
     $footers = Footer::all();
     $infoContacts = InfoContact::all();
-
-    return view('contact/index', compact('menus', 'footers', 'infoContacts'));
+    $messages = Message::all();
+ 
+    return view('contact/index', compact('menus', 'footers', 'infoContacts', 'messages'));
 })->name('contact');
 
 
@@ -131,6 +135,8 @@ Route::get('/contact', function () {
     //Contact
     //Info-Contact
     Route::resource('/admin/info-contact', 'InfoContactController');
+    //Formulaire/mail
+    Route::resource('/admin/contact-messages', 'MessagesController');
 
 
 
