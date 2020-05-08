@@ -33,4 +33,10 @@
         };
     };
 
+    function invert($variable, $nb){
+        for ($i = 0; $i < $nb; $i++) {
+            return $variable[count($variable)-$i-1];
+        };
+    }
+
 ?>

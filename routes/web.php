@@ -16,6 +16,8 @@ use App\Service1;
 use App\Service2;
 use App\InfoContact;
 use App\Message;
+use App\BtnForm;
+use App\ServicesPrimes;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +51,9 @@ Route::get('/home', function () {
     $services2 = Service2::all();
     $infoContacts = InfoContact::all();
     $messages = Message::all();
+    $btnForms = BtnForm::all();
 
-    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts', 'messages'));
+    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts', 'messages', 'btnForms'));
 })->name('home');
 
 //Page Services
@@ -60,9 +63,11 @@ Route::get('/services', function () {
     $services1 = Service1::all();
     $services2 = Service2::all();
     $infoContacts = InfoContact::all();
-    $messages = Meessage::all();
+    $messages = Message::all();
+    $btnForms = BtnForm::all();
+    $servicesPrimes = ServicesPrimes::all();
 
-    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts', 'messages'));
+    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts', 'messages', 'btnForms', 'servicesPrimes'));
 })->name('services');
 
 //Page Blog
@@ -87,8 +92,9 @@ Route::get('/contact', function () {
     $footers = Footer::all();
     $infoContacts = InfoContact::all();
     $messages = Message::all();
+    $btnForms = BtnForm::all();
  
-    return view('contact/index', compact('menus', 'footers', 'infoContacts', 'messages'));
+    return view('contact/index', compact('menus', 'footers', 'infoContacts', 'messages', 'btnForms'));
 })->name('contact');
 
 
@@ -137,6 +143,10 @@ Route::get('/contact', function () {
     Route::resource('/admin/info-contact', 'InfoContactController');
     //Formulaire/mail
     Route::resource('/admin/contact-messages', 'MessagesController');
+    //Bouton du Formulaire
+    Route::resource('/admin/bouton-form', 'BtnFormController');
+    //Services Primés
+    Route::resource('/admin/services-primes', 'ServicesPrimesController');
 
 
 

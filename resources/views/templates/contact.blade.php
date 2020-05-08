@@ -62,14 +62,17 @@
 
                             {{-- Message --}}
                             <textarea name="message" placeholder="Message"></textarea>
-
                             @if (session('messages'))
                                 <div class="text-success pb-3">
                                     {{session('messages')}}
                                 </div>
                             @endif
-
-                            <button class="site-btn">send</button>
+                            
+                            @if (count($btnForms) !== 0)
+                                <button class="site-btn">{{$btnForms[0]->btn_name}}</button>
+                            @else
+                                <button class="site-btn">send</button>
+                            @endif
                         </div>
                         
                     </div>

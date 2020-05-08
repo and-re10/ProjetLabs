@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             @if (count($teams2) !== 0)
-                @foreach ($teams2 as $team2)
+                {{-- @foreach ($teams2 as $team2)
                     <!-- single member -->
                     <div class="col-sm-4">
                         <div class="member">
@@ -20,7 +20,17 @@
                             <h3>{{$team2->work}}</h3>
                         </div>
                     </div>
-                @endforeach
+                @endforeach --}}
+                @for ($i = 0; $i < 3; $i++)
+                    <!-- single member -->
+                    <div class="col-sm-4">
+                        <div class="member">
+                            <img src="{{asset('storage/'.$teams2[count($teams2) - $i - 1]->img_path)}}" alt="">
+                            <h2>{{$teams2[count($teams2) - $i - 1]->name}} {{$teams2[count($teams2) - $i - 1]->surname}}</h2>
+                            <h3>{{$teams2[count($teams2) - $i - 1]->work}}</h3>
+                        </div>
+                    </div>
+                @endfor
             @else
                 <!-- single member -->
                 <div class="col-sm-4">

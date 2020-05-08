@@ -234,17 +234,17 @@ return [
                 [
                     'text' => 'Testimonials',
                     'url'  => '/admin/testimonials1',
-                    'icon_color' => 'blue',
+                    'icon_color' => 'green',
                 ],
                 [
                     'text' => 'Team',
                     'url'  => '/admin/team1',
-                    'icon_color' => 'purple',
+                    'icon_color' => 'cyan',
                 ],
                 [
                     'text' => 'Ready?',
                     'url'  => '/admin/ready',
-                    'icon_color' => 'black',
+                    'icon_color' => 'blue',
                 ],
             ],
         ],
@@ -257,18 +257,13 @@ return [
             'icon'    => 'fas fa-home',
             'submenu' => [
                 [
-                    'text' => 'Bannière Services',
-                    'url'  => '',
-                    'icon_color' => 'orange',
-                ],
-                [
                     'text' => 'Services',
                     'url'  => '/admin/service1',
                     'icon_color' => 'yellow',
                 ],
                 [
                     'text' => 'Services Primés',
-                    'url'  => '',
+                    'url'  => '/admin/services-primes',
                     'icon_color' => 'green',
                 ],
             ],
@@ -281,11 +276,6 @@ return [
             'text'    => 'PAGE BLOG',
             'icon'    => 'fas fa-home',
             'submenu' => [
-                [
-                    'text' => 'Bannière Blog',
-                    'url'  => '',
-                    'icon_color' => 'orange',
-                ],
                 [
                     'text' => 'Articles',
                     'url'  => '',
@@ -337,24 +327,19 @@ return [
             'icon'    => 'fas fa-home',
             'submenu' => [
                 [
-                    'text' => 'Bannière Contact',
-                    'url'  => '',
-                    'icon_color' => 'orange',
-                ],
-                [
-                    'text' => 'Contact',
-                    'url'  => '',
-                    'icon_color' => 'yellow',
+                    'text' => 'Bouton du Formulaire',
+                    'url'  => '/admin/bouton-form',
+                    'icon_color' => 'green',
                 ],
                 [
                     'text' => 'Info Contact',
                     'url'  => '/admin/info-contact',
-                    'icon_color' => 'green',
+                    'icon_color' => 'cyan',
                 ],
                 [
                     'text' => 'Messages',
                     'url'  => '/admin/contact-messages',
-                    'icon_color' => 'cyan',
+                    'icon_color' => 'blue',
                 ],
             ],
         ],

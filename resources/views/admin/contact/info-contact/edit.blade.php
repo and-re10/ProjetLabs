@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Titre 1</label>
-                        <input type="text" class="form-control  @error('titre1') is-invalid @enderror" name="titre1" value="{{editError($infoContact->titre1, "titre")}}" id="titre1" placeholder="">
+                        <input type="text" class="form-control  @error('titre1') is-invalid @enderror" name="titre1" value="{{editError($infoContact->titre1, "titre1")}}" id="titre1" placeholder="">
                         @error('titre1')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
