@@ -19,6 +19,7 @@ use App\Message;
 use App\BtnForm;
 use App\ServicesPrimes;
 use App\Newsletter;
+use App\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,8 +81,9 @@ Route::get('/blog', function () {
     $menus = Menu::all();
     $footers = Footer::all();
     $newsletters = Newsletter::all();
+    $articles = Article::all();
 
-    return view('blog/index', compact('menus', 'footers', 'newsletters'));
+    return view('blog/index', compact('menus', 'footers', 'newsletters', 'articles'));
 })->name('blog');
 
 //Page Blog-Post
@@ -156,6 +158,8 @@ Route::get('/contact', function () {
     Route::resource('/admin/services-primes', 'ServicesPrimesController');
     //Newsletter
     Route::resource('/admin/newsletter', 'NewslettersController');
+    //Articles
+    Route::resource('/admin/articles', 'ArticlesController');
 
 
 // });

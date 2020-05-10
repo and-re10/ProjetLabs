@@ -24,7 +24,7 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="{{asset('img/avatar/03.jpg')}}" alt="">
+                            <img src="img/avatar/03.jpg" alt="">
                         </div>
                         <div class="author-info">
                             <h2>Lore Williams, <span>Author</span></h2>
@@ -37,7 +37,7 @@
                         <ul class="comment-list">
                             <li>
                                 <div class="avatar">
-                                    <img src="{{asset('img/avatar/01.jpg')}}" alt="">
+                                    <img src="img/avatar/01.jpg" alt="">
                                 </div>
                                 <div class="commetn-text">
                                     <h3>Michael Smith | 03 nov, 2017 | Reply</h3>
@@ -46,7 +46,7 @@
                             </li>
                             <li>
                                 <div class="avatar">
-                                    <img src="{{asset('img/avatar/02.jpg')}}" alt="">
+                                    <img src="img/avatar/02.jpg" alt="">
                                 </div>
                                 <div class="commetn-text">
                                     <h3>Michael Smith | 03 nov, 2017 | Reply</h3>
@@ -103,12 +103,12 @@
                 <div class="widget-item">
                     <h2 class="widget-title">Instagram</h2>
                     <ul class="instagram">
-                        <li><img src="{{asset('img/instagram/1.jpg')}}" alt=""></li>
-                        <li><img src="{{asset('img/instagram/2.jpg')}}" alt=""></li>
-                        <li><img src="{{asset('img/instagram/3.jpg')}}" alt=""></li>
-                        <li><img src="{{asset('img/instagram/4.jpg')}}" alt=""></li>
-                        <li><img src="{{asset('img/instagram/5.jpg')}}" alt=""></li>
-                        <li><img src="{{asset('img/instagram/6.jpg')}}" alt=""></li>
+                        <li><img src="img/instagram/1.jpg" alt=""></li>
+                        <li><img src="img/instagram/2.jpg" alt=""></li>
+                        <li><img src="img/instagram/3.jpg" alt=""></li>
+                        <li><img src="img/instagram/4.jpg" alt=""></li>
+                        <li><img src="img/instagram/5.jpg" alt=""></li>
+                        <li><img src="img/instagram/6.jpg" alt=""></li>
                     </ul>
                 </div>
                 <!-- Single widget -->
@@ -136,7 +136,7 @@
                 <div class="widget-item">
                     <h2 class="widget-title">Add</h2>
                     <div class="add">
-                        <a href=""><img src="{{asset('img/add.jpg')}}" alt=""></a>
+                        <a href=""><img src="img/add.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

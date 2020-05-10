@@ -278,7 +278,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Articles',
-                    'url'  => '',
+                    'url'  => '/admin/articles',
                     'icon_color' => 'yellow',
                 ],
                 [

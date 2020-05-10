@@ -112,7 +112,8 @@ class Testimonials2Controller extends Controller
 
         $testimonial2 = Testimonials2::find($id);
         if (request('image') !== null) {
-            Storage::delete($testimonial2->img_path);$testimonial2->img_path = request('image')->store('image');
+            Storage::delete($testimonial2->img_path);
+            $testimonial2->img_path = request('image')->store('image');
         }
         
         $testimonial2->name = request('name');
