@@ -10,16 +10,16 @@
         </div>
         <div class="row">
             @if (count($services2) !== 0)
-                @foreach ($services2 as $service2)
+                @foreach ($servs as $serv2)
                     <!-- single service -->
                     <div class="col-md-4 col-sm-6">
                         <div class="service">
                             <div class="icon">
-                                <i class="{{$service2->icon}}"></i>
+                                <i class="{{$serv2->icon}}"></i>
                             </div>
                             <div class="service-text">
-                                <h2>{{$service2->titre}}</h2>
-                                <p>{{maxStr($service2->description, 100)}}</p>
+                                <h2>{{$serv2->titre}}</h2>
+                                <p>{{maxStr($serv2->description, 100)}}</p>
                             </div>
                         </div>
                     </div>
@@ -135,6 +135,7 @@
                 </div>
             @endif
         </div>
+        {{$servs->links()}}
         <div class="text-center">
             <a href="#services-primes" class="site-btn">Browse</a>
         </div>

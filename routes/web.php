@@ -18,6 +18,7 @@ use App\InfoContact;
 use App\Message;
 use App\BtnForm;
 use App\ServicesPrimes;
+use App\Newsletter;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +53,9 @@ Route::get('/home', function () {
     $infoContacts = InfoContact::all();
     $messages = Message::all();
     $btnForms = BtnForm::all();
+    $servs = Service2::orderBy('id', 'desc')->paginate(9);
 
-    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts', 'messages', 'btnForms'));
+    return view('home/index', compact('menus', 'footers', 'banniere_homes', 'banniere_homes2', 'abouts', 'videos', 'testimonials1', 'testimonials2', 'teams1', 'teams2', 'readys', 'services1', 'services2', 'infoContacts', 'messages', 'btnForms', 'servs'));
 })->name('home');
 
 //Page Services
@@ -62,28 +64,33 @@ Route::get('/services', function () {
     $footers = Footer::all();
     $services1 = Service1::all();
     $services2 = Service2::all();
+    $servs = Service2::orderBy('id', 'desc')->paginate(9);
     $infoContacts = InfoContact::all();
     $messages = Message::all();
     $btnForms = BtnForm::all();
     $servicesPrimes = ServicesPrimes::all();
+    $newsletters = Newsletter::all();
+    
 
-    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'infoContacts', 'messages', 'btnForms', 'servicesPrimes'));
+    return view('services/index', compact('menus', 'footers', 'services1', 'services2', 'servs', 'infoContacts', 'messages', 'btnForms', 'servicesPrimes', 'newsletters'));
 })->name('services');
 
 //Page Blog
 Route::get('/blog', function () {
     $menus = Menu::all();
     $footers = Footer::all();
+    $newsletters = Newsletter::all();
 
-    return view('blog/index', compact('menus', 'footers'));
+    return view('blog/index', compact('menus', 'footers', 'newsletters'));
 })->name('blog');
 
 //Page Blog-Post
 Route::get('/blog-post', function () {
     $menus = Menu::all();
     $footers = Footer::all();
+    $newsletters = Newsletter::all();
 
-    return view('blog-post/index', compact('menus', 'footers'));
+    return view('blog-post/index', compact('menus', 'footers', 'newsletters'));
 })->name('blog-post');
 
 //Page Contact
@@ -147,7 +154,8 @@ Route::get('/contact', function () {
     Route::resource('/admin/bouton-form', 'BtnFormController');
     //Services Primés
     Route::resource('/admin/services-primes', 'ServicesPrimesController');
-
+    //Newsletter
+    Route::resource('/admin/newsletter', 'NewslettersController');
 
 
 // });

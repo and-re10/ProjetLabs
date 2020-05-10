@@ -358,7 +358,7 @@ return [
                 ],
                 [
                     'text' => 'Newsletter',
-                    'url'  => '',
+                    'url'  => '/admin/newsletter',
                     'icon_color' => 'yellow',
                 ],
                 [
