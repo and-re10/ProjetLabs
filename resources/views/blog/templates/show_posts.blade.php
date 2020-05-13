@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col-md-8 col-sm-7 blog-posts">
                 <!-- Post item -->
-                @if (count($articles) !== 0)
-                    @foreach($articles as $article)
+                @if (count($categorie->articles) !== 0)
+                    @foreach($categorie->articles as $article)
                         <div class="post-item">
                             <div class="post-thumbnail">
                                 <img src="{{asset('storage/'.$article->img_path)}}" alt="">
                                 <div class="post-date">
-                                    <h2>03</h2>
+                                    <h2>0{{$loop->index + 1}}</h2>
                                     <h3>Nov 2017</h3>
                                 </div>
                             </div>
@@ -90,9 +90,13 @@
                 
                 <!-- Pagination -->
                 <div class="page-pagination">
-                    <a class="active" href="">01.</a>
-                    <a href="">02.</a>
-                    <a href="">03.</a>
+                    @if (cout($categorie->articles) !== 0)
+                        {{$servs->links()}}
+                    @else
+                        <a class="active" href="">01.</a>
+                        <a href="">02.</a>
+                        <a href="">03.</a>
+                    @endif
                 </div>
             </div>
             <!-- Sidebar area -->

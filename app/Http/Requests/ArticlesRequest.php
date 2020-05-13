@@ -27,6 +27,7 @@ class ArticlesRequest extends FormRequest
             "image" => "required",
             "titre" => "required|min:2|max:50",
             "texte" => "required|min:2",
+            "categorie_id" => "required|numeric",
         ];
     }
 
@@ -41,6 +42,8 @@ class ArticlesRequest extends FormRequest
 
             "texte.required" => "Ecrivez un texte",
             "texte.min" => "Minimum, 2 caractères",
+
+            "categorie_id.required" => "Choisissez une categorie",
         ];
     }
 }

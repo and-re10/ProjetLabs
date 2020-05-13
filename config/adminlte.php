@@ -288,17 +288,17 @@ return [
                 ],
                 [
                     'text' => 'Comments',
-                    'url'  => '',
+                    'url'  => '/admin/post-comments',
                     'icon_color' => 'cyan',
                 ],
                 [
                     'text' => 'Catégories',
-                    'url'  => '',
+                    'url'  => '/admin/categories',
                     'icon_color' => 'blue',
                 ],
                 [
                     'text' => 'Tags',
-                    'url'  => '',
+                    'url'  => '/admin/tags',
                     'icon_color' => 'purple',
                 ],
             ],

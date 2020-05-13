@@ -20,6 +20,9 @@ use App\BtnForm;
 use App\ServicesPrimes;
 use App\Newsletter;
 use App\Article;
+use App\Tag;
+use App\Categorie;
+use App\PostComment;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,8 +85,11 @@ Route::get('/blog', function () {
     $footers = Footer::all();
     $newsletters = Newsletter::all();
     $articles = Article::all();
+    $tags = Tag::all();
+    $categories = Categorie::all();
+    // $categorie = Categorie::find($id);
 
-    return view('blog/index', compact('menus', 'footers', 'newsletters', 'articles'));
+    return view('blog/index', compact('menus', 'footers', 'newsletters', 'articles', 'tags', 'categories'));
 })->name('blog');
 
 //Page Blog-Post
@@ -91,8 +97,11 @@ Route::get('/blog-post', function () {
     $menus = Menu::all();
     $footers = Footer::all();
     $newsletters = Newsletter::all();
+    $tags = Tag::all();
+    $categories = Categorie::all();
+    $postComments = PostComment::all();
 
-    return view('blog-post/index', compact('menus', 'footers', 'newsletters'));
+    return view('blog-post/index', compact('menus', 'footers', 'newsletters', 'tags', 'categories', 'postComments'));
 })->name('blog-post');
 
 //Page Contact
@@ -160,6 +169,12 @@ Route::get('/contact', function () {
     Route::resource('/admin/newsletter', 'NewslettersController');
     //Articles
     Route::resource('/admin/articles', 'ArticlesController');
+    //Tags
+    Route::resource('/admin/tags', 'TagsController');
+    //Categories
+    Route::resource('/admin/categories', 'CategoriesController');
+    //Post-Comments
+    Route::resource('/admin/post-comments', 'PostCommentsController');
 
 
 // });

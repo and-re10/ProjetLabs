@@ -40,6 +40,16 @@
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
+                    
+                    <div class="form-group">
+                      <label for="categorie_id">Categories</label>
+                      <select class="form-control" name="categorie_id" id="">
+                        @foreach ($categories as $categorie)
+                              <option value="{{$categorie->id}}">{{$categorie->categories}}</option>
+                          @endforeach
+                      </select>
+                    </div>
+
                 </div>
                 <!-- /.card-body -->
     

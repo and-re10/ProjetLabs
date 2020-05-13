@@ -9,6 +9,9 @@ use App\Article;
 use App\Menu;
 use App\Footer;
 use App\Newsletter;
+use App\Tag;
+use App\Categorie;
+use App\PostComment;
 
 class ArticlesController extends Controller
 {
@@ -31,7 +34,9 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.articles.create');
+        $categories = Categorie::all();
+
+        return view('admin.blog.articles.create', compact('categories'));
     }
 
     /**
@@ -42,11 +47,14 @@ class ArticlesController extends Controller
      */
     public function store(ArticlesRequest $request)
     {
+        // $categories = Categorie::all();
+
         $article = new Article();
 
         $article->img_path = request('image')->store('image');
         $article->titre = request('titre');
         $article->texte = request('texte');
+        $article->categorie_id = request('categorie_id');
         $article->save();
 
         return redirect()->route('articles.index');
@@ -64,8 +72,11 @@ class ArticlesController extends Controller
         $menus = Menu::all();
         $footers = Footer::all();
         $newsletters = Newsletter::all();
+        $tags = Tag::all();
+        $categories = Categorie::all();
+        $postComments = PostComment::all();
 
-        return view('blog-post.index', compact('article', 'menus', 'footers', 'newsletters'));
+        return view('blog-post.index', compact('article', 'menus', 'footers', 'newsletters', 'tags', 'categories', 'postComments'));
     }
 
     /**
@@ -77,8 +88,9 @@ class ArticlesController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
+        $categories = Categorie::all();
 
-        return view('admin.blog.articles.edit', compact('article'));
+        return view('admin.blog.articles.edit', compact('article', 'categories'));
     }
 
     /**
@@ -102,6 +114,9 @@ class ArticlesController extends Controller
             "texte.required" => "Ecrivez un texte",
             "texte.min" => "Minimum, 2 caractères",
         ]);
+
+        $categories = Categorie::all();
+
         $article = Article::find($id);
         //dd($request->file('image'));
         if (request('image')!== null) {
@@ -111,6 +126,7 @@ class ArticlesController extends Controller
 
         $article->titre = request('titre');
         $article->texte = request('texte');
+        $article->categorie_id = request('categorie_id');
         $article->save();
 
         return redirect()->route('articles.index');
